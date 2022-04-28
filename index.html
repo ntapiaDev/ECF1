@@ -7,9 +7,136 @@
     <link rel="stylesheet" href="./assets/css/normalize.css">
     <link rel="stylesheet" href="./assets/css/style.css">
     <script src="./assets/js/app.js" defer></script>
+    <script src="https://kit.fontawesome.com/015d178d74.js" crossorigin="anonymous"></script>
     <title>ECF 1</title>
 </head>
 <body>
-    
+    <header id="home">
+        <div class="header__top">
+            <p class="header__top__content">Page de profil</p>
+            <p class="header__top__content">Nicolas Tapia | 28 avril 2022</p>
+            <div class="header__top__nav">
+                <div class="header__top__nav-btn header__top__topNav"></div>
+                <div class="header__top__nav-btn header__top__middleNav"></div>
+                <div class="header__top__nav-btn header__top__bottomNav"></div>
+            </div>
+        </div>
+        <div class="header__nav">
+            <div class="header__nav__mobile-nav">
+                <ul>
+                    <a href="#home"><li>Accueil</li></a>
+                    <a href="#edito"><li>Edito</li></a>
+                    <a href="#projects"><li>Projets</li></a>
+                    <a href="#contact"><li>Contact</li></a>
+                </ul>
+            </div>
+            <p>Job Challenge</p>
+        </div>
+        <div class="header__bottom">
+            <img src="./assets/img/profil.png" alt="Image de profil">
+        </div>
+    </header>
+
+    <main>
+        <section id="edito" class="main__edito">
+            <h1>EDITO</h1>
+            <p>Voici la page de mon super portfolio.</p>
+            <p>Vous trouverez ici tous mes supers projets.</p>
+            <p>À venir un jour : super slider de ouf.</p>
+        </section>
+        <section id="projects" class="main__project">
+            <h2>Liste des projets</h1>
+            <div class="main__project-left">
+                <div class="main__project-btn"><i class="fa-solid fa-caret-left fa-2x"></i></div>
+            </div>
+            <div class="main__project-right">
+                <div class="main__project-btn"><i class="fa-solid fa-caret-right fa-2x"></i></div>
+            </div>
+            <div class="main__project__container">
+                <article class="main__project__card">
+                    <div class="main__project__img">
+                        <img src="./assets/img/1.png" alt="Image du project 1">
+                    </div>
+                    <div class="main__project__content">
+                        <h3>Projet 1</h3>
+                        <p>Contenu du projet 1</p>
+                    </div>
+                </article>
+                <article class="main__project__card">
+                    <div class="main__project__img">
+                        <img src="./assets/img/2.png" alt="Image du project 2">
+                    </div>
+                    <div class="main__project__content">
+                        <h3>Projet 2</h3>
+                        <p>Contenu du projet 2</p>
+                    </div>
+                </article>
+                <article class="main__project__card">
+                    <div class="main__project__img">
+                        <img src="./assets/img/3.png" alt="Image du project 3">
+                    </div>
+                    <div class="main__project__content">
+                        <h3>Projet 3</h3>
+                        <p>Contenu du projet 3</p>
+                    </div>
+                </article>
+                <article class="main__project__card">
+                    <div class="main__project__img">
+                        <img src="./assets/img/4.png" alt="Image du project 4">
+                    </div>
+                    <div class="main__project__content">
+                        <h3>Projet 4</h3>
+                        <p>Contenu du projet 4</p>
+                    </div>
+                </article>
+                <article class="main__project__card">
+                    <div class="main__project__img">
+                        <img src="./assets/img/5.png" alt="Image du project 5">
+                    </div>
+                    <div class="main__project__content">
+                        <h3>Projet 5</h3>
+                        <p>Contenu du projet 5</p>
+                    </div>
+                </article>
+                <article class="main__project__card">
+                    <div class="main__project__img">
+                        <img src="./assets/img/6.png" alt="Image du project 6">
+                    </div>
+                    <div class="main__project__content">
+                        <h3>Projet 6</h3>
+                        <p>Contenu du projet 6</p>
+                    </div>
+                </article>
+            </div>
+            <div class="main__project__icons">
+                <div class="main__project__circle"></div>
+                <div class="main__project__circle"></div>
+                <div class="main__project__circle"></div>
+                <div class="main__project__circle"></div>
+                <div class="main__project__circle"></div>
+                <div class="main__project__circle"></div>
+            </div>
+        </section>
+        <section id="contact" class="main__contact">
+            <h2>Contact</h2>
+            <form action="#">
+                <label for="name">Nom :</label>
+                <input type="text" name="name" id="name" placeholder="Mon nom">
+                <label for="firstname">Prénom :</label>
+                <input type="text" name="firstname" id="firstname" placeholder="Mon prénom">
+                <label for="message">Message :</label>
+                <textarea name="message" id="message" cols="30" rows="10" placeholder="Mon message"></textarea>
+                <button type="submit">Envoyer</button>
+            </form>
+        </section>
+    </main>
+    <footer class="footer">
+        <h4>Footer</h4>
+        <div class="footer__links">
+            <i class="fa-brands fa-facebook fa-2x"></i>
+            <i class="fa-brands fa-twitter fa-2x"></i>
+            <i class="fa-brands fa-linkedin fa-2x"></i> 
+        </div>
+    </footer>
 </body>
 </html>
