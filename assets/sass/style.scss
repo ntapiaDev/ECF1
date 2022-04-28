@@ -9,6 +9,10 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     background-color: $medium-dark;
     color: #FFF;
@@ -18,6 +22,15 @@ body {
 // Header
 .header {
     &__top {
+        &__color {
+            width: 35px;
+            height: 35px;
+            background-color: #FFF;
+            border-radius: 50%;
+            position: absolute;
+            top: 15px;
+            left: 15px;
+        }
         &__content {
             text-align: center;
             margin: 10px;
@@ -189,6 +202,7 @@ body {
         form {
             padding-top: 15px;
             background-color: $dark-dark;
+            box-shadow: $dark-shadow;
             display: flex;
             flex-direction: column;
         }
