@@ -3,6 +3,13 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
 
+:root {
+    --light-dark: #2E2E2E;
+    --medium-dark: #262626;
+    --dark-dark: #1E1E1E;
+    --dark: #121212;
+}
+
 *, ::before, ::after {
     margin: 0;
     padding: 0;
@@ -14,7 +21,7 @@ html {
 }
 
 body {
-    background-color: $medium-dark;
+    background-color: var(--medium-dark);
     color: #FFF;
     font-family: 'Raleway', sans-serif;
 }
@@ -36,15 +43,17 @@ body {
             margin: 10px;
         }
         &__nav {
+            width: 40px;
+            height: 25px;
             position: absolute;
             top: 15px;
-            right: 55px;
+            right: 15px;
             &-btn {
                 width: 40px;
                 height: 5px;
                 background-color: #EEE;
                 position: absolute;
-                transition: 0.5s;
+                transition: transform 0.5s, opacity 0.5s;
             }
             &-btn:nth-child(2) {
                 top: 10px;
@@ -57,7 +66,7 @@ body {
 
     &__nav {
         padding: 10px;
-        background-color: $light-dark;
+        background-color: var(--light-dark);
         box-shadow: $dark-shadow;
 
         // Nav mobile
@@ -91,6 +100,7 @@ body {
             margin: 25px;
             width: 200px;
             border-radius: 50%;
+            box-shadow: $dark-shadow;
         }
     }
 }
@@ -99,7 +109,7 @@ body {
 .main {
     &__edito {
         padding: 5px 25px 25px 25px;
-        background-color: $light-dark;
+        background-color: var(--light-dark);
         box-shadow: $dark-shadow;
         text-align: center;
 
@@ -118,7 +128,7 @@ body {
         &-left, &-right {
             width: 50px;
             height: 50px;
-            background-color: $light-dark;
+            background-color: var(--light-dark);
             border-radius: 50%;
             position: absolute;
             opacity: 0.1;
@@ -157,7 +167,7 @@ body {
         }
         &__img {
             padding: 20px;
-            background-color: $light-dark;
+            background-color: var(--light-dark);
             img {
                 width: 100%;
                 border-radius: 10px;
@@ -165,7 +175,7 @@ body {
         }
         &__content {
             padding: 15px;
-            background-color: $dark-dark;
+            background-color: var(--dark-dark);
             p {
                 margin-top: 10px;
                 margin-bottom: 50px;
@@ -201,7 +211,7 @@ body {
         }
         form {
             padding-top: 15px;
-            background-color: $dark-dark;
+            background-color: var(--dark-dark);
             box-shadow: $dark-shadow;
             display: flex;
             flex-direction: column;
@@ -224,7 +234,7 @@ body {
 // Footer
 .footer {
     padding: 10px;
-    background-color: $dark;
+    background-color: var(--dark);
     h4 {
         margin-top: 10px;
         margin-bottom: 25px;

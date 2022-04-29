@@ -1,3 +1,23 @@
+// White mode
+const colorBtn = document.querySelector('.header__top__color');
+let darkMode = true;
+const changeColor = () => {
+    let root = document.documentElement;
+    document.querySelector('body').style.color = darkMode ? '#000' : '#FFF';
+    document.querySelectorAll('a').forEach(a => a.style.color = darkMode ? '#000' : '#FFF');
+    darkMode ? root.style.setProperty('--light-dark', '#FFF') : root.style.setProperty('--light-dark', '#2E2E2E');
+    darkMode ? root.style.setProperty('--medium-dark', '#DDD') : root.style.setProperty('--medium-dark', '#2E2E2E');
+    darkMode ? root.style.setProperty('--dark-dark', '#CCC') : root.style.setProperty('--dark-dark', '#2E2E2E');
+    darkMode ? root.style.setProperty('--dark', '#AAA') : root.style.setProperty('--dark', '#2E2E2E');
+    colorBtn.style.backgroundColor = darkMode ? 'rgb(48, 48, 48)' : 'rgb(255, 255, 255)';
+    allBtn.forEach(btn => btn.style.backgroundColor = darkMode ? 'rgb(48, 48, 48)' : '#EEE');
+    document.querySelectorAll('.main__project-btn').forEach(btn => btn.style.backgroundColor = darkMode ? 'rgb(48, 48, 48)' : '#EEE');
+    document.querySelectorAll('.fa-btn').forEach(btn => btn.style.color = darkMode ? 'rgb(255, 255, 255)' : 'rgb(0, 0, 0)');
+    darkMode = darkMode ? false : true;
+}
+
+colorBtn.addEventListener('click', changeColor);
+
 // Nav mobile
 const navBtn = document.querySelector('.header__top__nav');
 const topBtn = document.querySelector('.header__top__topNav');
@@ -12,7 +32,8 @@ const handleNav = () => {
     middleBtn.style.opacity = middleBtn.style.opacity === '0' ? '1' : '0';
     bottomBtn.style.transform = bottomBtn.style.transform === 'rotate(-45deg) translateX(7px) translateY(-6px)' ? 'rotate(0)' : 'rotate(-45deg) translateX(7px) translateY(-6px)';
     // Couleur du bouton
-    allBtn.forEach(btn => btn.style.backgroundColor = navMenu.style.height === '120px' ? '#87bb34' : '#EEE');
+    allBtn.forEach(btn => btn.style.backgroundColor = navMenu.style.height === '120px' ? '#87bb34' 
+        : darkMode ? '#EEE' : 'rgb(48, 48, 48)');
 }
 
 navBtn.addEventListener('click', handleNav);
