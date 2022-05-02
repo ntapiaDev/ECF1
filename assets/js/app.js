@@ -6,9 +6,9 @@ const changeColor = () => {
     document.querySelector('body').style.color = darkMode ? '#000' : '#FFF';
     document.querySelectorAll('a').forEach(a => a.style.color = darkMode ? '#000' : '#FFF');
     darkMode ? root.style.setProperty('--light-dark', '#FFF') : root.style.setProperty('--light-dark', '#2E2E2E');
-    darkMode ? root.style.setProperty('--medium-dark', '#DDD') : root.style.setProperty('--medium-dark', '#2E2E2E');
-    darkMode ? root.style.setProperty('--dark-dark', '#CCC') : root.style.setProperty('--dark-dark', '#2E2E2E');
-    darkMode ? root.style.setProperty('--dark', '#AAA') : root.style.setProperty('--dark', '#2E2E2E');
+    darkMode ? root.style.setProperty('--medium-dark', '#DDD') : root.style.setProperty('--medium-dark', '#262626');
+    darkMode ? root.style.setProperty('--dark-dark', '#CCC') : root.style.setProperty('--dark-dark', '#1E1E1E');
+    darkMode ? root.style.setProperty('--dark', '#AAA') : root.style.setProperty('--dark', '#121212');
     colorBtn.style.backgroundColor = darkMode ? 'rgb(48, 48, 48)' : 'rgb(255, 255, 255)';
     allBtn.forEach(btn => btn.style.backgroundColor = darkMode ? 'rgb(48, 48, 48)' : '#EEE');
     document.querySelectorAll('.main__project-btn').forEach(btn => btn.style.backgroundColor = darkMode ? 'rgb(48, 48, 48)' : '#EEE');

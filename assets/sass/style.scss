@@ -344,6 +344,7 @@ a {
             flex-direction: column;
             @media screen and (min-width: 1200px) {
                 display: grid;
+                margin-bottom: 25px;
                 label:nth-child(1) {
                     grid-area: 1 / 1 / 1 / 1;
                 }

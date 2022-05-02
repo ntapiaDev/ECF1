@@ -460,6 +460,7 @@ a:hover {
   .main__contact form {
     display: -ms-grid;
     display: grid;
+    margin-bottom: 25px;
   }
   .main__contact form label:nth-child(1) {
     -ms-grid-row: 1;
