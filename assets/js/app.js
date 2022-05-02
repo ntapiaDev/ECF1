@@ -82,12 +82,18 @@ const modale = document.querySelector('.main__project__modale');
 const openModale = (e) => {
     modaleContainer.style.display = "flex";
     document.querySelector('body').style.overflow = 'hidden';
+    setTimeout(() => modale.style.transform = 'translate(0)', 100);
     document.querySelector('.main__project__modale__img img').src = e.target.parentElement.parentElement.children[1].src;
     document.querySelector('.main__project__modale__content h3').textContent = e.target.parentElement.parentElement.nextElementSibling.children[0].textContent;
 }
 const closeModale = (e) => {
-    e.target === modaleContainer ? modaleContainer.style.display = "none" : null;
-    e.target === modaleContainer ? document.querySelector('body').style.overflow = 'auto' : null;
+    if (e.target === modaleContainer) {
+        modale.style.transform = 'translate(-100vw)';
+        setTimeout(() => {
+            modaleContainer.style.display = "none";
+            document.querySelector('body').style.overflow = 'auto';
+        }, 100);
+    }
 }
 
 modaleBtns.forEach(btn => btn.addEventListener('click', openModale));
