@@ -37,6 +37,9 @@ body {
             position: absolute;
             top: 15px;
             left: 15px;
+            &:hover {
+                cursor: pointer;
+            }
         }
         &__content {
             text-align: center;
@@ -155,8 +158,9 @@ body {
             }
         }
         &__container {
-            width: 600%;
+            width: 800%;
             display: flex;
+            transform: translate(-12.5%);
             transition: transform 0.3s;
         }
         &__card {

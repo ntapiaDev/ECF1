@@ -43,18 +43,35 @@ const leftBtn = document.querySelector('.main__project-left');
 const rightBtn = document.querySelector('.main__project-right');
 const sliderContainer = document.querySelector('.main__project__container');
 const sliderIcons = document.querySelectorAll('.main__project__circle');
-let index = 0;
+let index = 1;
 
+const reset = (value) => {
+    const init = () => {
+        index = value;
+        sliderContainer.style.transition = 'none';
+        sliderContainer.style.transform = 'translate('+ -(index) * 100/8 + '%)';
+        setTimeout(() => sliderContainer.style.transition = 'transform 0.3s', 10);
+        document.removeEventListener('transitionend', init);
+    }
+    document.addEventListener('transitionend', init)
+}
 const moveSlide = (direction) => {
-    index = direction === '+' & index < 5
+    index = direction === '+' & index < 7
         ? index + 1 
-        : direction === '+' & index === 5
+        : direction === '+' & index === 7
             ? index = 0
             : direction === '-' & index > 0
-                ? index - 1 : 5;
-    sliderContainer.style.transform = 'translate('+ -(index) * 100/6 + '%)';
+                ? index - 1 : 7;
+    sliderContainer.style.transform = 'translate('+ -(index) * 100/8 + '%)';
+    if (index === 7) {
+        reset(1)
+    } else if (index === 0) {
+        reset(6)
+    }
     sliderIcons.forEach(slider => slider.style.backgroundColor = 'rgb(48, 48, 48)')
-    sliderIcons[index].style.backgroundColor = '#87bb34';
+    let iconIndex = index - 1
+    iconIndex === 6 ? iconIndex = 0 : iconIndex === -1 ? iconIndex = 5 : '';
+    sliderIcons[iconIndex].style.backgroundColor = '#87bb34';
 }
 
 leftBtn.addEventListener('click', () => moveSlide('-'));

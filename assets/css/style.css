@@ -45,6 +45,10 @@ body {
   left: 15px;
 }
 
+.header__top__color:hover {
+  cursor: pointer;
+}
+
 .header__top__content {
   text-align: center;
   margin: 10px;
@@ -183,10 +187,12 @@ body {
 }
 
 .main__project__container {
-  width: 600%;
+  width: 800%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-transform: translate(-12.5%);
+          transform: translate(-12.5%);
   -webkit-transition: -webkit-transform 0.3s;
   transition: -webkit-transform 0.3s;
   transition: transform 0.3s;
