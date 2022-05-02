@@ -63,16 +63,32 @@ const moveSlide = (direction) => {
             : direction === '-' & index > 0
                 ? index - 1 : 7;
     sliderContainer.style.transform = 'translate('+ -(index) * 100/8 + '%)';
-    if (index === 7) {
-        reset(1)
-    } else if (index === 0) {
-        reset(6)
-    }
+    index === 7 ? reset(1) : index === 0 ? reset(6) : null;
     sliderIcons.forEach(slider => slider.style.backgroundColor = 'rgb(48, 48, 48)')
     let iconIndex = index - 1
-    iconIndex === 6 ? iconIndex = 0 : iconIndex === -1 ? iconIndex = 5 : '';
+    iconIndex === 6 ? iconIndex = 0 : iconIndex === -1 ? iconIndex = 5 : null;
     sliderIcons[iconIndex].style.backgroundColor = '#87bb34';
 }
 
 leftBtn.addEventListener('click', () => moveSlide('-'));
 rightBtn.addEventListener('click', () => moveSlide('+'));
+
+// Modale
+
+const modaleBtns = document.querySelectorAll('.main__project__openModale-btn');
+const modaleContainer = document.querySelector('.main__project__modale-container');
+const modale = document.querySelector('.main__project__modale');
+
+const openModale = (e) => {
+    modaleContainer.style.display = "flex";
+    document.querySelector('body').style.overflow = 'hidden';
+    document.querySelector('.main__project__modale__img img').src = e.target.parentElement.parentElement.children[1].src;
+    document.querySelector('.main__project__modale__content h3').textContent = e.target.parentElement.parentElement.nextElementSibling.children[0].textContent;
+}
+const closeModale = (e) => {
+    e.target === modaleContainer ? modaleContainer.style.display = "none" : null;
+    e.target === modaleContainer ? document.querySelector('body').style.overflow = 'auto' : null;
+}
+
+modaleBtns.forEach(btn => btn.addEventListener('click', openModale));
+modaleContainer.addEventListener('click', closeModale);

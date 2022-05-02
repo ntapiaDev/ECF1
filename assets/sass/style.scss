@@ -26,6 +26,14 @@ body {
     font-family: 'Raleway', sans-serif;
 }
 
+a {
+    color: #FFF;
+    text-decoration: none;
+    &:hover {
+        color: #87bb34;
+    }
+}
+
 // Header
 .header {
     &__top {
@@ -51,6 +59,9 @@ body {
             position: absolute;
             top: 15px;
             right: 15px;
+            @media screen and (min-width: 768px) {
+                display: none;
+            }
             &-btn {
                 width: 40px;
                 height: 5px;
@@ -83,16 +94,30 @@ body {
                 flex-direction: column;
                 align-items: end;
             }
-            a {
-                color: #FFF;
-                text-decoration: none;
-                &:hover {
-                    color: #87bb34;
-                }
-            }
             li {
                 margin-top: 10px;
                 list-style: none
+            }
+        }
+
+        // Nav desktop
+        &__desktop-container {
+            display: flex;
+            justify-content: space-between;
+            padding: 0 5px;
+        }
+        nav {
+            width: 50%;
+            display: none;
+            @media screen and (min-width: 768px) {
+                display: block;
+            }
+        }
+        &__desktop-nav {
+            display: flex;
+            justify-content: space-between;
+            li {
+                list-style: none;
             }
         }
     }
@@ -136,12 +161,15 @@ body {
             position: absolute;
             opacity: 0.1;
             top: calc(50% - 25px);
-            z-index: 10;
+            z-index: 1;
             @extend %flex-center;
             transition: 0.3s;
             &:hover {
                 cursor: pointer;
                 opacity: 0.75;
+            }
+            @media screen and (min-width: 568px) {
+                display: none;
             }
         }
         &-right {
@@ -162,19 +190,65 @@ body {
             display: flex;
             transform: translate(-12.5%);
             transition: transform 0.3s;
+            @media screen and (min-width: 568px) {
+                width: 100%;
+                padding: 10px 25px;
+                transform: translate(0);
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
+            }
+            @media screen and (min-width: 1200px) {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 25px;
+            }
+        }
+        &__mobile {
+            @media screen and (min-width: 568px) {
+                display: none;
+            }
         }
         &__card {
             margin: 25px;
             border-radius: 10px;
             overflow: hidden;
             box-shadow: $dark-shadow;
+            transition: transform 0.1s;
+            @media screen and (min-width: 768px) {
+                &:hover {
+                    cursor: pointer;
+                    transform: scale(1.05);
+                }
+            }
+            &:hover .main__project__openModale {
+                @extend %flex-center;
+            }
         }
         &__img {
             padding: 20px;
             background-color: var(--light-dark);
+            position: relative;
             img {
                 width: 100%;
                 border-radius: 10px;
+            }
+        }
+        &__openModale {
+            display: none;
+            position: absolute;
+            width: calc(100% - 40px);
+            height: calc(100% - 43px);
+            border-radius: 10px;
+            background-color: rgba(24, 24, 24, 0.5);
+            z-index: 10;
+            p {
+                padding: 10px;
+                border-radius: 5px;
+                background-color: #EEE;
+                color: #000;
+                &:hover {
+                    cursor: pointer;
+                }
             }
         }
         &__content {
@@ -184,7 +258,6 @@ body {
                 margin-top: 10px;
                 margin-bottom: 50px;
             }
-
         }
 
         // Slider
@@ -195,6 +268,9 @@ body {
             background-color: rgb(96, 96, 96);
             display: flex;
             justify-content: space-evenly;
+            @media screen and (min-width: 568px) {
+                display: none;
+            }
         }
         &__circle {
             width: 8px;
@@ -206,6 +282,49 @@ body {
         &__circle:nth-child(1) {
             background-color: #87bb34;
         }
+
+        // Modale
+        &__modale-container {
+            width: 100%;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: rgba(24, 24, 24, 0.5);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 10;
+        }
+        &__modale {
+            width: 90%;
+            height: 90%;
+            padding: 10px;
+            box-shadow: $light-shadow;
+            background-color: var(--light-dark);
+            z-index: 100;
+            @media screen and (min-width: 768px) {
+                width: 75%;
+                height: 85%;
+                padding: 25px;
+            }
+            @media screen and (min-width: 1200px) {
+                width: 50%;
+                height: 75%;
+            }
+            img {
+                width: 100%;
+                @media screen and (min-width: 768px) {
+                    width: 50%;
+                }
+            }
+            h3 {
+                margin: 15px;
+            }
+            p {
+                margin-top: 15px;
+            }
+        }
     }
 
     &__contact {
@@ -214,6 +333,8 @@ body {
             margin: 25px;
         }
         form {
+            max-width: 1200px;
+            margin: auto;
             padding-top: 15px;
             background-color: var(--dark-dark);
             box-shadow: $dark-shadow;
