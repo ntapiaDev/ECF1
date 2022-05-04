@@ -181,7 +181,7 @@ a {
             border-radius: 50%;
             background-color: #EEE;
             @extend %flex-center;
-            i {
+            span {
                 color: #2E2E2E;
             }
         }
