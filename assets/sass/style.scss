@@ -331,8 +331,9 @@ a {
 
     &__contact {
         text-align: center;
-        h2 {
+        h3 {
             margin: 25px;
+            font-size: 1.5em;
         }
         form {
             max-width: 1200px;
@@ -384,6 +385,18 @@ a {
             background-color: #87bb34;
             margin: 10px auto 25px;
         }
+        &__success, &__error {
+            color: limegreen;
+            margin-top: -10px;
+            margin-bottom: 15px;
+            display: none;
+            @media screen and (min-width: 1200px) {
+                grid-area: 5 / 2 / 5 / 4;
+            }
+        }
+        &__error {
+            color: red;
+        }
     }
 }
 
@@ -403,7 +416,7 @@ a {
         background-color: #FFF;
         @extend %flex-center;
 
-        i {
+        span {
             margin: 0 10px;
         }
     }
@@ -419,4 +432,5 @@ a {
 
 .fa-linkedin {
     color: rgb(1, 117, 175);
+    color: #df7c7c;
 }

@@ -98,3 +98,43 @@ const closeModale = (e) => {
 
 modaleBtns.forEach(btn => btn.addEventListener('click', openModale));
 modaleContainer.addEventListener('click', closeModale);
+
+// REGEX
+
+const USER_REGEX = /^[A-z][A-z0-9-_]{2,23}$/;
+const MSG_REGEX = /^[A-z][A-z0-9-_]{9,1024}$/;
+
+const lastname = document.querySelector('#lastname');
+const firstname = document.querySelector('#firstname');
+const message = document.querySelector('#message');
+const button = document.querySelector('#button')
+const success = document.querySelector('.main__contact__success');
+const error = document.querySelector('.main__contact__error');
+
+const sendMessage = (e) => {
+    e.preventDefault();
+    if (USER_REGEX.test(lastname.value) && USER_REGEX.test(firstname.value) & MSG_REGEX.test(message.value)) {
+        success.style.display = 'block';
+        error.style.display = 'none';
+        lastname.style.backgroundColor = '#FFF';
+        lastname.value = '';
+        firstname.style.backgroundColor = '#FFF';
+        firstname.value = '';
+        message.style.backgroundColor = '#FFF';
+        message.value = '';
+    } else {
+        success.style.display = 'none';
+        error.style.display = 'block';
+    }
+}
+
+lastname.addEventListener('keyup', () => lastname.style.backgroundColor = 
+    lastname.value === '' ? '#FFF' : 
+    USER_REGEX.test(lastname.value) ? '#82d682' : '#df7c7c')
+firstname.addEventListener('keyup', () => firstname.style.backgroundColor = 
+    firstname.value === '' ? '#FFF' : 
+    USER_REGEX.test(firstname.value) ? '#82d682' : '#df7c7c')
+message.addEventListener('keyup', () => message.style.backgroundColor = 
+    message.value === '' ? '#FFF' : 
+    MSG_REGEX.test(message.value) ? '#82d682' : '#df7c7c')
+button.addEventListener('click', sendMessage);

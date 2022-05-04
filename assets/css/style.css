@@ -436,8 +436,9 @@ a:hover {
   text-align: center;
 }
 
-.main__contact h2 {
+.main__contact h3 {
   margin: 25px;
+  font-size: 1.5em;
 }
 
 .main__contact form {
@@ -521,6 +522,26 @@ a:hover {
   margin: 10px auto 25px;
 }
 
+.main__contact__success, .main__contact__error {
+  color: limegreen;
+  margin-top: -10px;
+  margin-bottom: 15px;
+  display: none;
+}
+
+@media screen and (min-width: 1200px) {
+  .main__contact__success, .main__contact__error {
+    -ms-grid-row: 5;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 2;
+    grid-area: 5 / 2 / 5 / 4;
+  }
+}
+
+.main__contact__error {
+  color: red;
+}
+
 .footer {
   padding: 10px;
   background-color: var(--dark);
@@ -539,7 +560,7 @@ a:hover {
   background-color: #FFF;
 }
 
-.footer__links i {
+.footer__links span {
   margin: 0 10px;
 }
 
@@ -553,5 +574,6 @@ a:hover {
 
 .fa-linkedin {
   color: #0175af;
+  color: #df7c7c;
 }
 /*# sourceMappingURL=style.css.map */

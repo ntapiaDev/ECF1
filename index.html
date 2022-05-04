@@ -35,10 +35,10 @@
                 <p>Job Challenge</p>
                 <nav>
                     <ul class="header__nav__desktop-nav">
-                        <a href="#home"><li>Accueil</li></a>
-                        <a href="#edito"><li>Edito</li></a>
-                        <a href="#projects"><li>Projets</li></a>
-                        <a href="#contact"><li>Contact</li></a>
+                        <li><a href="#home">Accueil</a></li>
+                        <li><a href="#edito">Edito</a></li>
+                        <li><a href="#projects">Projets</a></li>
+                        <li><a href="#contact">Contact</a></li>
                     </ul>
                 </nav>
             </div>
@@ -56,7 +56,7 @@
             <p>À venir un jour : super slider de ouf.</p>
         </section>
         <section id="projects" class="main__project">
-            <h2>Liste des projets</h1>
+            <h2>Liste des projets</h2>
             <div class="main__project-left">
                 <div class="main__project-btn"><i class="fa-solid fa-caret-left fa-2x fa-btn"></i></div>
             </div>
@@ -179,24 +179,26 @@
             </div>
         </section>
         <section id="contact" class="main__contact">
-            <h2>Contact</h2>
+            <h3>Contact</h3>
             <form action="#">
-                <label for="name">Nom :</label>
-                <input type="text" name="name" id="name" placeholder="Mon nom">
-                <label for="firstname">Prénom :</label>
-                <input type="text" name="firstname" id="firstname" placeholder="Mon prénom">
-                <label for="message">Message :</label>
-                <textarea name="message" id="message" cols="30" rows="10" placeholder="Mon message"></textarea>
-                <button type="submit">Envoyer</button>
+                <label for="lastname" aria-label="Votre nom">Nom :</label>
+                <input type="text" name="lastname" id="lastname" placeholder="Mon nom" aria-label="Entrez votre nom ici">
+                <label for="firstname" aria-label="Votre prénom">Prénom :</label>
+                <input type="text" name="firstname" id="firstname" placeholder="Mon prénom" aria-label="Entrez votre prénom ici">
+                <label for="message" aria-label="Votre message">Message :</label>
+                <textarea name="message" id="message" cols="30" rows="10" placeholder="Mon message (10 caractères minimums)" aria-label="Entrez votre message ici"></textarea>
+                <button type="submit" id="button" aria-label="Envoyer">Envoyer</button>
+                <p class="main__contact__success">Votre message a bien été envoyé.</p>
+                <p class="main__contact__error">Merci de vérifier que vos champs sont valides.</p>
             </form>
         </section>
     </main>
     <footer class="footer">
         <h4>Footer</h4>
         <div class="footer__links">
-            <i class="fa-brands fa-facebook fa-2x"></i>
-            <i class="fa-brands fa-twitter fa-2x"></i>
-            <i class="fa-brands fa-linkedin fa-2x"></i> 
+            <span class="fa-brands fa-facebook fa-2x"></span>
+            <span class="fa-brands fa-twitter fa-2x"></span>
+            <span class="fa-brands fa-linkedin fa-2x"></span> 
         </div>
     </footer>
 </body>
